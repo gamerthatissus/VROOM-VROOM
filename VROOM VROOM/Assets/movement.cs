@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -14,6 +16,11 @@ public class movement : MonoBehaviour
     public float rotx = 0;
 
     public float roty = 0;
+    
+    public float rotz = 0;
+    
+
+    public bool isUpsideDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,47 +28,34 @@ public class movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
      
         if (Input.GetKey(KeyCode.W))
         {
-            if (roty < 20)
+            if (roty < 10)
             {
-                roty += 0.1f;
+                roty += 0.2f;
 
             }
             else
             {
-                if (roty < 30)
-                {
-                    roty += 0.3f;
-
-                }
-                else
-                {
-                    roty = 30;
-                }
+                roty = 10;
+                
             }
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (roty > -20)
+            if (roty > -10)
             {
-                roty -= 0.1f;
+                roty -= 0.2f;
 
             }
             else
             {
-                if (roty > -30)
-                {
-                    roty -= 0.3f;
-
-                }
-                else
-                {
-                    roty = -30;
-                }
+              
+                    roty = -10;
+                
             }
         }
         else
@@ -79,7 +73,59 @@ public class movement : MonoBehaviour
                 {
                     if (roty > 0.05 || roty<-0.05 )
                     {
-                        roty *= 0.99f;
+                        roty *= 0.8f;
+                    }
+            
+                } 
+            
+            
+            }
+        }
+
+       
+        if (Input.GetKey(KeyCode.Z))
+        {
+            if (rotz < 10)
+            {
+                rotz += 0.2f;
+
+            }
+            else
+            {
+                rotz = 10;
+                
+            }
+        }
+        else if (Input.GetKey(KeyCode.X))
+        {
+            if (rotz > -10)
+            {
+                rotz -= 0.2f;
+
+            }
+            else
+            {
+              
+                rotz = -10;
+                
+            }
+        }
+        else
+        {
+            if (rotz>0 || rotz<0)
+            {
+            
+                if (Math.Abs(rotz)<0.1f )
+                {
+                    rotz = 0;
+            
+            
+                }
+                else
+                {
+                    if (rotz > 0.05 || rotz<-0.05 )
+                    {
+                        rotz *= 0.8f;
                     }
             
                 } 
@@ -88,45 +134,32 @@ public class movement : MonoBehaviour
             }
         }
         
-        
         if (Input.GetKey(KeyCode.D))
         {
-            if (rotx < 20)
+            if (rotx < 10)
             {
-                rotx += 0.1f;
+                rotx += 0.2f;
 
             }
             else
             {
-                if (rotx < 30)
-                {
-                    rotx += 0.3f;
-
-                }
-                else
-                {
-                    rotx = 30;
-                }
+              
+                    rotx = 10;
+                
             }
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (rotx > -20)
+            if (rotx > -10)
             {
-                rotx -= 0.1f;
+                rotx -= 0.2f;
 
             }
             else
             {
-                if (rotx > -30)
-                {
-                    rotx -= 0.3f;
-
-                }
-                else
-                {
-                    rotx = -30;
-                }
+              
+                    rotx = -10;
+                
             }
         }
         else
@@ -144,7 +177,7 @@ public class movement : MonoBehaviour
                 {
                     if (rotx > 0.05 || rotx<-0.05 )
                     {
-                        rotx *= 0.99f;
+                        rotx *= 0.8f;
                     }
             
                 } 
@@ -153,10 +186,10 @@ public class movement : MonoBehaviour
             }
         }
 
-        rb.angularVelocity = new Vector3(roty/3, rotx/3, 0);
-        rb.velocity = transform.forward * -speeed;
+        rb.angularVelocity = new Vector3(roty/2, rotx/2, rotz/2);
+        rb.velocity = transform.forward * (-speeed*1.5f);
         
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             if (speeed < 20)
             {
@@ -167,7 +200,7 @@ public class movement : MonoBehaviour
             {
                 if (speeed < 30)
                 {
-                    speeed += 0.3f;
+                    speeed += 0.02f;
 
                 }
                 else
@@ -176,7 +209,7 @@ public class movement : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.Mouse1))
         {
             if (speeed > -20)
             {
@@ -187,7 +220,7 @@ public class movement : MonoBehaviour
             {
                 if (speeed > -30)
                 {
-                    speeed -= 0.3f;
+                    speeed -= 0.02f;
 
                 }
                 else

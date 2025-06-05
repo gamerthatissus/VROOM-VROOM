@@ -18,7 +18,6 @@ public class movement : MonoBehaviour
     public float roty = 0;
     
     public float rotz = 0;
-    
 
     public bool isUpsideDown;
     // Start is called before the first frame update
@@ -35,7 +34,7 @@ public class movement : MonoBehaviour
         {
             if (roty < 10)
             {
-                roty += 0.2f;
+                roty += 0.3f;
 
             }
             else
@@ -48,7 +47,7 @@ public class movement : MonoBehaviour
         {
             if (roty > -10)
             {
-                roty -= 0.2f;
+                roty -= 0.3f;
 
             }
             else
@@ -73,7 +72,7 @@ public class movement : MonoBehaviour
                 {
                     if (roty > 0.05 || roty<-0.05 )
                     {
-                        roty *= 0.8f;
+                        roty *= 0.6f;
                     }
             
                 } 
@@ -87,7 +86,7 @@ public class movement : MonoBehaviour
         {
             if (rotz < 10)
             {
-                rotz += 0.2f;
+                rotz += 0.3f;
 
             }
             else
@@ -100,7 +99,7 @@ public class movement : MonoBehaviour
         {
             if (rotz > -10)
             {
-                rotz -= 0.2f;
+                rotz -= 0.3f;
 
             }
             else
@@ -125,7 +124,7 @@ public class movement : MonoBehaviour
                 {
                     if (rotz > 0.05 || rotz<-0.05 )
                     {
-                        rotz *= 0.8f;
+                        rotz *= 0.6f;
                     }
             
                 } 
@@ -138,7 +137,7 @@ public class movement : MonoBehaviour
         {
             if (rotx < 10)
             {
-                rotx += 0.2f;
+                rotx += 0.3f;
 
             }
             else
@@ -152,7 +151,7 @@ public class movement : MonoBehaviour
         {
             if (rotx > -10)
             {
-                rotx -= 0.2f;
+                rotx -= 0.3f;
 
             }
             else
@@ -177,7 +176,7 @@ public class movement : MonoBehaviour
                 {
                     if (rotx > 0.05 || rotx<-0.05 )
                     {
-                        rotx *= 0.8f;
+                        rotx *= 0.6f;
                     }
             
                 } 
@@ -185,22 +184,21 @@ public class movement : MonoBehaviour
             
             }
         }
-
-        rb.angularVelocity = new Vector3(roty/2, rotx/2, rotz/2);
-        rb.velocity = transform.forward * (-speeed*1.5f);
+        rb.angularVelocity = rb.transform.TransformDirection(new Vector3(roty/2,rotx/2,rotz/2));
+        rb.velocity = transform.forward * (-speeed*1.3f);
         
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (speeed < 20)
             {
-                speeed += 0.1f;
+                speeed += 0.15f;
 
             }
             else
             {
                 if (speeed < 30)
                 {
-                    speeed += 0.02f;
+                    speeed += 0.04f;
 
                 }
                 else
@@ -213,14 +211,14 @@ public class movement : MonoBehaviour
         {
             if (speeed > -20)
             {
-                speeed -= 0.1f;
+                speeed -= 0.15f;
 
             }
             else
             {
                 if (speeed > -30)
                 {
-                    speeed -= 0.02f;
+                    speeed -= 0.04f;
 
                 }
                 else
@@ -244,7 +242,7 @@ public class movement : MonoBehaviour
                 {
                     if (speeed > 0.05 || speeed<-0.05 )
                     {
-                        speeed *= 0.99f;
+                        speeed *= 0.9f;
                     }
             
                 } 

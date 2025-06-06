@@ -184,8 +184,20 @@ public class movement : MonoBehaviour
             
             }
         }
+
         rb.angularVelocity = rb.transform.TransformDirection(new Vector3(roty/2,rotx/2,rotz/2));
         rb.velocity = transform.forward * (-speeed*1.3f);
+     
+        if (rb.useGravity == false)
+        {
+            rb.isKinematic = false;
+        }
+        else
+        {
+            rb.isKinematic = true;
+
+        }
+     
         
         if (Input.GetKey(KeyCode.Mouse0))
         {

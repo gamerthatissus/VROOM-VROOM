@@ -6003,7 +6003,7 @@ GameObject:
   - component: {fileID: 122226243}
   - component: {fileID: 122226242}
   m_Layer: 0
-  m_Name: train cart (2)
+  m_Name: train cart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6017,7 +6017,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122226240}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 0.1
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -6417,7 +6417,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187506652}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 0.1
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 2}
@@ -18426,7 +18426,7 @@ GameObject:
   - component: {fileID: 402705732}
   - component: {fileID: 402705731}
   m_Layer: 0
-  m_Name: lazer
+  m_Name: lazer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18440,13 +18440,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402705729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.041817226, z: -0, w: 0.9991253}
-  m_LocalPosition: {x: 0.44, y: 0.058, z: -3.2}
-  m_LocalScale: {x: 0.18172678, y: 0.21559182, z: 5.1998467}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52, y: -0.013, z: -6.78}
+  m_LocalScale: {x: 0.18172678, y: 0.21559182, z: 11.872952}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122477959}
-  m_LocalEulerAnglesHint: {x: 0, y: 4.793, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &402705731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18488,7 +18488,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402705729}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -42072,13 +42072,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336436298}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.047446188, z: -0, w: 0.9988739}
-  m_LocalPosition: {x: -0.36, y: 0.058, z: -3.32}
-  m_LocalScale: {x: 0.18172678, y: 0.21559182, z: 5.1998467}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.626, y: -0.01, z: -6.9}
+  m_LocalScale: {x: 0.18172678, y: 0.21559182, z: 11.872952}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122477959}
-  m_LocalEulerAnglesHint: {x: 0, y: -5.439, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1336436300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42120,7 +42120,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336436298}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -43078,6 +43078,7 @@ GameObject:
   - component: {fileID: 1397571418}
   - component: {fileID: 1397571417}
   - component: {fileID: 1397571416}
+  - component: {fileID: 1397571420}
   m_Layer: 0
   m_Name: planet
   m_TagString: Untagged
@@ -43172,6 +43173,23 @@ Transform:
   - {fileID: 947236561}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397571420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397571415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e394042ef12ef459093c397d65125247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerrb: {fileID: 2122477955}
+  cartRB1: {fileID: 187506654}
+  cartRB2: {fileID: 2113480563}
+  cartRB3: {fileID: 122226242}
+  zoneName: 
 --- !u!1 &1397853829
 GameObject:
   m_ObjectHideFlags: 0
@@ -58538,7 +58556,7 @@ GameObject:
   - component: {fileID: 2113480563}
   - component: {fileID: 2113480568}
   m_Layer: 0
-  m_Name: train cart (1)
+  m_Name: train cart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58552,7 +58570,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113480561}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 0.1
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -58803,8 +58821,8 @@ Rigidbody:
     serializedVersion: 2
     m_Bits: 0
   m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -59030,6 +59048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aea25baf5044434983c2626433e65d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc1: {fileID: 1336436301}
+  bc2: {fileID: 402705732}
+  rm1: {fileID: 1336436302}
+  rm2: {fileID: 402705733}
+  zzzzz: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

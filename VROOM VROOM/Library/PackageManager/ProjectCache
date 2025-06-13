@@ -886,12 +886,14 @@ m_ResolvedPackages:
     - 1.9.5
     - 1.9.6
     - 1.9.7
+    - 1.9.8
     compatible:
     - 1.9.4
     - 1.9.5
     - 1.9.6
     - 1.9.7
-    recommended: 1.9.7
+    - 1.9.8
+    recommended: 1.9.8
     deprecated:
     - 1.8.0-pre.1
   dependencies:

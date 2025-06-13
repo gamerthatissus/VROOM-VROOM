@@ -15,6 +15,7 @@ public class TriggerZoneIdentifier2 : MonoBehaviour
                                                                                                                   
         if (other.gameObject.name == "hit")
         {
+            
            Destroy(other.gameObject);
                
            
